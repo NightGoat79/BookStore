@@ -3302,6 +3302,9 @@
           }
         }
       },
+      "System.Data.SQLite/1.0.108": {
+        "type": "package"
+      },
       "System.Diagnostics.Contracts/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -8612,6 +8615,15 @@
         "version.txt"
       ]
     },
+    "System.Data.SQLite/1.0.108": {
+      "sha512": "QIh+GB+erDrvVIbEpEfVRF1U9fJOwmZCRyAPISDwmt8xn3vilM2xjEjr6hQBTI4a2uPxsn6cihT9BJwXAnM8eQ==",
+      "type": "package",
+      "path": "system.data.sqlite/1.0.108",
+      "files": [
+        "system.data.sqlite.1.0.108.nupkg.sha512",
+        "system.data.sqlite.nuspec"
+      ]
+    },
     "System.Diagnostics.Contracts/4.3.0": {
       "sha512": "eelRRbnm+OloiQvp9CXS0ixjNQldjjkHO4iIkR5XH2VIP8sUB/SIpa1TdUW6/+HDcQ+MlhP3pNa1u5SbzYuWGA==",
       "type": "package",
@@ -12533,7 +12545,8 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
       "Microsoft.AspNetCore.All >= 2.0.7",
-      "Microsoft.NETCore.App >= 2.0.0"
+      "Microsoft.NETCore.App >= 2.0.0",
+      "System.Data.SQLite >= 1.0.108"
     ]
   },
   "packageFolders": {
@@ -12580,6 +12593,10 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
+          "System.Data.SQLite": {
+            "target": "Package",
+            "version": "1.0.108"
+          },
           "Microsoft.NETCore.App": {
             "target": "Package",
             "version": "2.0",

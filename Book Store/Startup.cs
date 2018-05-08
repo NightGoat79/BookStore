@@ -9,8 +9,8 @@ namespace WebAPI
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<TodoContext>(opt =>
-                opt.UseInMemoryDatabase("TodoList"));
+            services.AddDbContext<OrderContext>(opt =>
+                opt.UseInMemoryDatabase("Orders"));
             services.AddMvc();
         }
 

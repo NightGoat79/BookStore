@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>My Placed Orders</title>
+    <link rel="stylesheet" href="jquery-ui/jquery-ui.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-grid.css">
+    <style>
+        input[type='submit'], button, [aria-label] {
+            cursor: pointer;
+        }
+        table {
+            margin: 25px;
+            font-family: Arial, sans-serif;
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+        th {
+            background-color: #0066CC;
+            color: white;
+        }
+        td {
+            border: 1px solid;
+            padding: 0;
+            margin: 0;
+        }
+        h3, h1 {
+            padding-left: 25px;
+        }
+    </style>
+</head>
+<body>
+
+    <h3>My Placed Orders</h3>
+    <!--Order table-->
+    <table class="table table-striped table-hover table-bordered">
+        <tr>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Cost</th>
+            <th></th>
+        </tr>
+        <tbody id="orders"></tbody>
+    </table>
+    <h3><a href="index.html" class="btn btn-success">Back</a></h3>
+
+    <!--Login dialog box-->
+    <div id="dialog" title="Login">
+        <h5>Login to view your orders.</h5>
+        <br />Email:
+        <input type="text" id="login-uname" class="form-control" />
+        <br />Password:
+        <input type="password" id="login-pwd" class="form-control" />
+        <br />
+        <button id="login" class="btn btn-success">Login</button>
+    </div>
+
+    <script src="jquery/jquery-3.3.1.min.js"></script>
+    <script src="jquery-ui/jquery-ui.min.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="orders.js"></script>
+
+</body>
+</html>

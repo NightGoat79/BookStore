@@ -5,11 +5,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\SQLiteConfiguration.cs" />
+    <Compile Remove="DBManager.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.7" />
+    <PackageReference Include="System.Data.SQLite" Version="1.0.108" />
   </ItemGroup>
 
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\jquery-ui\external\jquery\jquery.js" />
+    <None Include="wwwroot\jquery-ui\jquery-ui.js" />
+    <None Include="wwwroot\jquery-ui\jquery-ui.min.js" />
   </ItemGroup>
 
 </Project>

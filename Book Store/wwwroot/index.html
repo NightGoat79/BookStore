@@ -2,7 +2,10 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>To-do CRUD</title>
+    <title>Book Store</title>
+    <link rel="stylesheet" href="jquery-ui/jquery-ui.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-grid.css">
     <style>
         input[type='submit'], button, [aria-label] {
             cursor: pointer;
@@ -11,6 +14,7 @@
             display: none;
         }
         table {
+            margin: 25px;
             font-family: Arial, sans-serif;
             border: 1px solid;
             border-collapse: collapse;
@@ -21,44 +25,103 @@
         }
         td {
             border: 1px solid;
+            padding: 0;
+            margin: 0;
+        }
+        .book {
+            margin: 10px;
             padding: 5px;
+            background-color: #f5f5ef;
+            padding: 5px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            width: 200px;
+            height: 250px;
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .title{
+            font-weight: bold;
+        }
+        .price {
+            color: #b3b3b3;
+            font-style: italic;
+        }
+        h3, h1, select {
+            padding-left: 25px;
         }
     </style>
 </head>
 <body>
-    <h1>To-do CRUD</h1>
-    <h3>Add</h3>
-    <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
-        <input type="text" id="add-name" placeholder="New to-do">
-        <input type="submit" value="Add">
-    </form>
 
-    <div id="spoiler">
-        <h3>Edit</h3>
-        <form class="my-form">
-            <input type="hidden" id="edit-id">
-            <input type="checkbox" id="edit-isComplete">
-            <input type="text" id="edit-name">
-            <input type="submit" value="Edit">
-            <a onclick="closeInput()" aria-label="Close">&#10006;</a>
-        </form>
-    </div>
+    <h1>Order Books</h1>
+    <br />
 
-    <p id="counter"></p>
-
-    <table>
+    <!--Order table-->
+    <h3>Cart</h3>
+    <table class="table table-striped table-hover table-bordered">
         <tr>
-            <th>Is Complete</th>
             <th>Name</th>
-            <th></th>
+            <th>Quantity</th>
+            <th>Cost</th>
             <th></th>
         </tr>
-        <tbody id="todos"></tbody>
+        <tbody id="orders"></tbody>
     </table>
+    <!--the three buttons just underneath the order table-->
+    <div class="container">
+        <div class="content row">
+            <div class="col-sm"></div>
+            <div class="col-sm"></div>
+            <div class="col-sm">
+                <button onclick="login()" class="btn btn-success">Place Order</button>&nbsp;
+                <button onclick="deleteAll()" class="btn btn-warning">Reset Order</button>&nbsp;
+                <a href="orders.html" class="btn btn-success">My Orders</a>
+            </div>
+        </div>
+    </div>
+    <br />
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-            crossorigin="anonymous"></script>
+    <h3>Shop</h3>
+    <!--Book Grid-->
+    <br />
+    <div class="container">
+        <div class="content row">
+            <select id="categories" class="form-control col-sm">
+                <option value="Programming">Programming</option>
+                <option value="Fiction">Fiction</option>
+                <option value="Any">Any</option>
+            </select>
+            <div class="col-sm"></div>
+            <div class="col-sm"></div>
+        </div>
+    </div>
+    <div id="books" class="container">
+    </div>
+    <br />
+
+    <!--Login dialog box-->
+    <div id="dialog" title="Login">
+        <h5>You must login to place an order.</h5>
+        <br />Email:
+        <input type="text" id="login-uname" class="form-control"/>
+        <br />Password:
+        <input type="password" id="login-pwd" class="form-control"/>
+        <br />
+        <button id="login" class="btn btn-success">Login</button>
+    </div>
+
+    <script src="jquery/jquery-3.3.1.min.js"></script>
+    <script src="jquery-ui/jquery-ui.min.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
     <script src="site.js"></script>
 </body>
 </html>
